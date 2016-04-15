@@ -1,0 +1,15 @@
+<html>
+<head>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    socket.on('connect', function() {
+        socket.emit('ping', {data: "let's table tennis"});
+    });
+</script>
+</head>
+<body>
+    This page does a ping to the server to reproduce
+    <a href="https://github.com/benoitc/gunicorn/issues/1210#issuecomment-210466094">this issue</a>
+</body>
+</html>
